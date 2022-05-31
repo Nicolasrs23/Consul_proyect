@@ -1,0 +1,26 @@
+{
+    "service": {
+      "id": "rds_service_proxy1",
+      "name": "rds_service_proxy",
+      "port": 5432,
+      "connect" : {
+        "sidecar_service" : {
+          "proxy":{
+            "upstreams": [{
+              "destination_name":"rds_service",
+              "local_bind_port": 9432
+            }]
+          }
+        }
+        },
+       "check": {
+            "id": "ssh",
+            "name": "SSH TCP on port ",
+            "tcp" : "localhost:9432",
+            "interval" : "10s",
+            "timeout":  "1s"
+          }
+
+    }
+  }
+

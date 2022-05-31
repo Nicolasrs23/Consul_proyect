@@ -1,0 +1,29 @@
+{
+    "Node": "rds_node",
+    "Address": "RDS ADDRESS...",
+    "NodeMeta": {
+      "external-node": "true",
+      "external-probe": "false"  /// I try setting true as well and nothing. Also it is unhelthy becouse you can`t ping RDS////
+    },
+    "Service": {
+      "ID": "rds_service1",
+      "Service": "rds_service",
+      "Port": 5432
+    },
+
+    "Check": {
+      "Name": "tcp",
+      "status": "passing",
+      "ServiceID":"rds_service1",
+      "Definition": {
+      "TCP": "RDS ADDRESS...",
+      "interval": "5s",
+      "Output": "pass"
+      }
+      
+      }
+  
+       
+
+    
+  }
